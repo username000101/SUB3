@@ -1,0 +1,11 @@
+﻿BasedOnStyle: Microsoft
+IndentWidth: 4
+TabWidth: 4
+UseTab: ForIndentation
+ColumnLimit: 0
+PointerAlignment: Left
+ReferenceAlignment: Left
+SpaceAfterCStyleCast: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortLoopsOnASingleLine: false
+BreakBeforeBraces: Allman
