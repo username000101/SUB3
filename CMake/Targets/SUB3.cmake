@@ -35,9 +35,6 @@ file(GLOB SUB3_src
 target_sources(SUB3
         PUBLIC ${SUB3_src}
 )
-target_precompile_headers(SUB3
-        PRIVATE "${PREFIX}/src/Utils/Pch.h"
-)
 set_target_properties(SUB3
         PROPERTIES
         UNITY_BUILD ON
