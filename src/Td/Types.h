@@ -1,12 +1,10 @@
 ﻿#pragma once
 
-namespace sub::td::types
-{
+namespace sub::td::types {
 
-struct error
-{
-	const char* message;
-	int code;
-};
+	struct error {
+		const char* message;
+		int code;
+	};
 
-} // namespace types
+} // namespace sub::td::types

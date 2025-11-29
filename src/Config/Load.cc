@@ -1,13 +1,12 @@
-﻿#include "Config.h"
-
-#include <fstream>
+﻿#include <fstream>
 
 #include <plog/Log.h>
-bool sub::config::Configuration::Load(const std::filesystem::path& config_file)
-{
 
-	if (!std::filesystem::exists(config_file) || !std::filesystem::is_regular_file(config_file))
-	{
+#include "Config.h"
+
+bool sub::config::Configuration::Load(const std::filesystem::path& config_file) {
+
+	if (!std::filesystem::exists(config_file) || !std::filesystem::is_regular_file(config_file)) {
 		LOGW << "Config file '" << config_file.string() << "' does not exist" << std::endl;
 		return false;
 	}
@@ -23,13 +22,10 @@ bool sub::config::Configuration::Load(const std::filesystem::path& config_file)
 			json += buffer;
 	}
 
-	if (auto write_result = glz::read_json<SUBConfig>(json); !write_result.has_value())
-	{
+	if (auto write_result = glz::read_json<SUBConfig>(json); !write_result.has_value()) {
 		LOGF << "Failed to load config from \"" << config_file.string() << "\": \"" << glz::format_error(write_result.error()) << "\"" << std::endl;
 		return false;
-	}
-	else
-	{
+	} else {
 		LOGI << "Update config from file \"" << config_file.string() << "\"" << std::endl;
 		config.loadable_config = write_result.value();
 		return true;
