@@ -6,7 +6,7 @@
 
 WINDOWS_CODE_BLOCK(
 	inline const char* sigstr(int signal) {
-		switch (signal) {
+		switch (static_cast<DWORD>(signal)) {
 		case EXCEPTION_ACCESS_VIOLATION:
 			return "EXCEPTION_ACCESS_VIOLATION";
 		case EXCEPTION_STACK_OVERFLOW:
