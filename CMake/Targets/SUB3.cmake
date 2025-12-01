@@ -1,7 +1,6 @@
 ﻿message(NOTICE "Adding SUB3 executable target")
 
-add_executable(SUB3
-        ../../src/Safety/EnableSafetyLinux.cc)
+add_executable(SUB3)
 
 target_compile_definitions(SUB3
         PUBLIC SUB_VERSION="${CMAKE_PROJECT_VERSION}"
@@ -19,11 +18,13 @@ target_include_directories(SUB3
         PUBLIC "${PREFIX}/src"
         PUBLIC "${PREFIX}/third_party/plog/include"
         PUBLIC "${PREFIX}/third_party/yamc/include"
+        PUBLIC "${PREFIX}/third_party/cli/include"
         PUBLIC "${PREFIX}/third_party/subprocess/src/cpp"
 )
 
 file(GLOB SUB3_src
         "${PREFIX}/main.cpp"
+        "${PREFIX}/src/CLI/*.cc"
         "${PREFIX}/src/Config/*.cc"
         "${PREFIX}/src/Error/*.cc"
         "${PREFIX}/src/Main/*.cc"
