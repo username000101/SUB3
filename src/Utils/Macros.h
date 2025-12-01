@@ -9,11 +9,3 @@
 		}                                             \
 		return SUB_VERSION;                           \
 	}()
-
-#ifdef _WIN32
-#define WINDOWS_CODE_BLOCK(expr) expr
-#define LINUX_CODE_BLOCK(expr)
-#else
-#define WINDOWS_CODE_BLOCK(expr)
-#define LINUX_CODE_BLOCK(expr) expr
-#endif
