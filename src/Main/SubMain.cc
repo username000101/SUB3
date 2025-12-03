@@ -11,7 +11,7 @@ void sub::main::sub_main(const std::filesystem::path& cfgfile, std::optional<std
 		LOGF << "Failed to init SUB v" << SUB_GET_VERSION() << std::endl;
 		safety::Safety::Shutdown(EXIT_FAILURE, "Check previous logs");
 	}
-	auto cfg = config::Configuration::Get();
+	auto& cfg = config::Configuration::Get();
 	cfg.spoofed_version = spoofed_version;
 
 	LOGI << "Starting SUB3 v" << SUB_GET_VERSION() << std::endl;
