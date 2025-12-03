@@ -1,4 +1,5 @@
-﻿#include <algorithm>
+﻿#ifdef _WIN32
+#include <algorithm>
 #include <csignal>
 #include <ranges>
 #include <thread>
@@ -7,7 +8,6 @@
 
 #include "Safety.h"
 
-#ifdef _WIN32
 inline const char* sigstr(DWORD signal) {
 	switch (signal) {
 	case EXCEPTION_ACCESS_VIOLATION:
@@ -50,7 +50,7 @@ LONG WINAPI sub::safety::Safety::DefaultHandler(EXCEPTION_POINTERS* eptrs) {
 		EXCEPTION_FLT_DIVIDE_BY_ZERO,
 	};
 
-	if (std::ranges::any_of(panic_codes, [eptrs] (auto& pcode) -> bool { return pcode == eptrs->ExceptionRecord->ExceptionCode; })) {
+	if (std::ranges::any_of(panic_codes, [eptrs](auto& pcode) -> bool { return pcode == eptrs->ExceptionRecord->ExceptionCode; })) {
 		__error_occurred = 1;
 		__signal = static_cast<int>(eptrs->ExceptionRecord->ExceptionCode);
 		__instruction_pointer = static_cast<int>(eptrs->ContextRecord->Rip);
