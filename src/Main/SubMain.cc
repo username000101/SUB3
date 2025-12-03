@@ -1,11 +1,16 @@
 ﻿#include "Config/Config.h"
 #include "Logger/Logger.h"
 #include "Loop.h"
+#include "Utils/Macros.h"
 #include "Server/RPC/RPC.h"
 #include "Td/Td.h"
 
-void sub::main::sub_main() {
-	logger::InitializeLogger(); // Initialize logging
+void sub::main::sub_main(const std::filesystem::path& cfgfile, std::optional<std::string> spoofed_version) {
+	config::Configuration::Load(cfgfile);
+	auto cfg = config::Configuration::Get();
+	cfg.spoofed_version = spoofed_version;
+
+	LOGI << "Starting SUB3 v" << SUB_GET_VERSION() << std::endl;
 
 	server::rpc::start_rpc_server(5000); // Start RPC server
 
