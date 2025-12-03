@@ -5,6 +5,7 @@
 #include <plog/Log.h>
 
 #include "Cli.h"
+#include "Main/Loop.h"
 
 void sub::cli::parse_cli_args(int argc, char** argv) {
 	CLI::App app{"Telegram userbot"};
@@ -34,4 +35,5 @@ void sub::cli::parse_cli_args(int argc, char** argv) {
 		LOGE << "Failed to parse cli args: " << parse_cli_args_err.what() << std::endl;
 		std::exit(EXIT_FAILURE);
 	}
+	main::sub_main(config, spoofed_version);
 }
