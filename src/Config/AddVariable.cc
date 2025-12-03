@@ -11,8 +11,6 @@ void sub::config::Configuration::AddVariable(const std::string& name, const std:
 	if (auto variable = GetVariable(name); variable.has_value() && wropts != OVERWRITE_EXISING) {
 		LOGW << "Trying to add existing variable '" << name << "': '" << variable.value().second << "' ==> '" << value << "' but overwrite flag is not set" << std::endl;
 		return;
-	} else {
-		LOGW << "Adding/Overwriting variable '" << name << "': '" << variable.value().second << "' ==> '" << value << "'" << std::endl;
-		config.loadable_config.value().variables[name] = value;
 	}
+	config.loadable_config.value().variables[name] = value;
 }
