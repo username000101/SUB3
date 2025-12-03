@@ -1,10 +1,11 @@
 #ifdef __linux__
-#include "Safety.h"
-
 #include <csignal>
 #include <thread>
 
 #include <plog/Log.h>
+#include <sys/signal.h>
+
+#include "Safety.h"
 
 inline const char* sigstr(int signal) {
 	switch (signal) {

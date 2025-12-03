@@ -4,6 +4,10 @@
 #include <Windows.h>
 #endif
 
+#ifdef __linux__
+#include <sys/signal.h>
+#endif
+
 namespace sub::safety {
 #ifdef _WIN32
 	class Safety {
