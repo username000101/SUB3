@@ -37,7 +37,7 @@ namespace sub::config {
 			OVERWRITE_EXISING = 1,
 		};
 
-		[[nodiscard]] static SUBConfiguration Get() { return config; }
+		[[nodiscard]] static SUBConfiguration& Get() { return config; }
 		static bool Load(const std::filesystem::path&);
 		static void AddVariable(const std::string&, const std::string&, const WriteOptions&);
 		static void RemoveVariable(const std::string&);
