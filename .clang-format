@@ -1,0 +1,54 @@
+﻿# Basics
+BasedOnStyle: LLVM
+Standard: Latest
+
+# Indents
+IndentWidth: 4
+TabWidth: 4
+UseTab: Always
+ColumnLimit: 0
+NamespaceIndentation: All
+
+# Spaces
+SpaceAfterCStyleCast: false
+SpaceAfterLogicalNot: false
+SpaceAfterTemplateKeyword: true
+SpaceBeforeParens: ControlStatements
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeRangeBasedForLoopColon: false
+
+# Alignment
+AlignAfterOpenBracket: BlockIndent
+PointerAlignment: Left
+ReferenceAlignment: Left
+
+# Braces
+BreakBeforeBraces: Attach
+
+# Some short stuff
+AllowShortFunctionsOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: Always
+AllowShortLoopsOnASingleLine: true
+AllowShortBlocksOnASingleLine: Always
+AllowShortEnumsOnASingleLine: true
+AllowShortLambdasOnASingleLine: All
+
+# Breaks
+BreakTemplateDeclarations: No
+
+# Sort
+SortIncludes: CaseInsensitive
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: '^<[a-z_]+>$'
+    Priority: 1
+  - Regex: '^<.+\.h(pp)?>'
+    Priority: 2
+  - Regex: '^<.+>'
+    Priority: 3
+  - Regex: '".*"'
+    Priority: 4
+
+# Args
+BinPackArguments: true
+BinPackParameters: true

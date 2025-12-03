@@ -1,0 +1,18 @@
+[submodule "third_party/glaze"]
+	path = third_party/glaze
+	url = https://github.com/stephenberry/glaze
+[submodule "third_party/rpc"]
+	path = third_party/rpc
+	url = https://github.com/rpclib/rpclib
+[submodule "third_party/plog"]
+	path = third_party/plog
+	url = https://github.com/SergiusTheBest/plog
+[submodule "third_party/yamc"]
+	path = third_party/yamc
+	url = https://github.com/username000101/yamc
+[submodule "third_party/cli"]
+	path = third_party/cli
+	url = https://github.com/CLIUtils/CLI11
+[submodule "third_party/subprocess"]
+	path = third_party/subprocess
+	url = https://github.com/benman64/subprocess
