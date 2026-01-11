@@ -1,5 +1,6 @@
-﻿#include "CLI/Cli.h"
-#include "Safety/Safety.h"
+﻿#include "Safety/Safety.h"
+
+import sub3_cli;
 
 int main(int argc, char** argv) {
 	sub::safety::Safety::EnableSafety(nullptr);
