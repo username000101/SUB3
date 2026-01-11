@@ -23,6 +23,8 @@ void sub::main::sub_main(const std::filesystem::path& cfgfile, std::optional<std
 	td::TdWrapper::StartUpdatesBroadcasterThread(); // Start updates broadcaster thread
 	td::TdWrapper::ExecuteRequest(R"({ "@type": "setLogVerbosityLevel", "new_verbosity_level": 1 })");
 
+	config::Configuration::RunProcesses();
+
 	while (true) {
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
