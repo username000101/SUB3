@@ -36,6 +36,13 @@ file(GLOB SUB3_src
 target_sources(SUB3
         PUBLIC ${SUB3_src}
 )
+
+target_sources(SUB3
+        PRIVATE
+        FILE_SET CXX_MODULES
+        FILES
+            "${PREFIX}/src/Logger/Logger.cppm"
+)
 set_target_properties(SUB3
         PROPERTIES
         UNITY_BUILD ON

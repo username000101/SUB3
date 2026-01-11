@@ -1,10 +1,11 @@
 ﻿#include "Config/Config.h"
-#include "Logger/Logger.h"
 #include "Loop.h"
 #include "Safety/Safety.h"
 #include "Server/RPC/RPC.h"
 #include "Td/Td.h"
 #include "Utils/Macros.h"
+
+import sub3_logging;
 
 void sub::main::sub_main(const std::filesystem::path& cfgfile, std::optional<std::string> spoofed_version) {
 	if (!config::Configuration::Load(cfgfile)) {

@@ -5,8 +5,9 @@
 #include <plog/Log.h>
 
 #include "Cli.h"
-#include "Logger/Logger.h"
 #include "Main/Loop.h"
+
+import sub3_logging;
 
 void sub::cli::parse_cli_args(int argc, char** argv) {
 	CLI::App app{"Telegram userbot"};
