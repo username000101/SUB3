@@ -5,6 +5,7 @@
 #include <plog/Log.h>
 
 #include "Cli.h"
+#include "Logger/Logger.h"
 #include "Main/Loop.h"
 
 void sub::cli::parse_cli_args(int argc, char** argv) {
@@ -30,6 +31,7 @@ void sub::cli::parse_cli_args(int argc, char** argv) {
 	}
 
 	try {
+		logger::InitializeLogger();
 		app.parse(argc, argv);
 	} catch (const std::exception& parse_cli_args_err) {
 		LOGE << "Failed to parse cli args: " << parse_cli_args_err.what() << std::endl;
