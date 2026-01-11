@@ -42,6 +42,7 @@ target_sources(SUB3
         FILE_SET CXX_MODULES
         FILES
             "${PREFIX}/src/Logger/Logger.cppm"
+            "${PREFIX}/src/Main/SubMain.cppm"
 )
 set_target_properties(SUB3
         PROPERTIES

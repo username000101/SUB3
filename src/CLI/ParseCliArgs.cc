@@ -5,8 +5,8 @@
 #include <plog/Log.h>
 
 #include "Cli.h"
-#include "Main/Loop.h"
 
+import sub3_main;
 import sub3_logging;
 
 void sub::cli::parse_cli_args(int argc, char** argv) {
