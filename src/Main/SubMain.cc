@@ -20,8 +20,8 @@ void sub::main::sub_main(const std::filesystem::path& cfgfile, std::optional<std
 
 	td::TdWrapper::CreateInstance();				// Create td json client
 	td::TdWrapper::StartRequestsSenderThread();		// Start requests sender thread
-	td::TdWrapper::StartUpdatesBroadcasterThread(); // Start updates broadcaster thread
 	td::TdWrapper::ExecuteRequest(R"({ "@type": "setLogVerbosityLevel", "new_verbosity_level": 1 })");
+	td::TdWrapper::StartUpdatesBroadcasterThread(); // Start updates broadcaster thread
 
 	config::Configuration::RunProcesses();
 
