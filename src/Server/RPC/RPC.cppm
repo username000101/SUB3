@@ -1,5 +1,6 @@
-﻿#include "RPC.h"
+module;
 
+#include <cstdint>
 #include <thread>
 
 #include <plog/Log.h>
@@ -9,8 +10,10 @@
 #include "Td/Td.h"
 #include "Utils/Macros.h"
 
+export module sub3_rpc;
+
 void rpc_server_loop(std::uint16_t port) {
-	LOGI << "Starting RPC server on port " << port << std::endl;
+		LOGI << "Starting RPC server on port " << port << std::endl;
 	try {
 		rpc::server server("127.0.0.1", port);
 		server.bind("sub.ping", [] { return "PONG"; });
@@ -74,7 +77,9 @@ void rpc_server_loop(std::uint16_t port) {
 	}
 }
 
-void sub::server::rpc::start_rpc_server(std::uint16_t port) {
-	std::thread server_thread([port] { rpc_server_loop(port); });
-	server_thread.detach();
+export namespace sub::server::rpc {
+	void start_rpc_server(std::uint16_t port) {
+		std::thread server_thread([port] { rpc_server_loop(port); });
+		server_thread.detach();
+	}
 }
