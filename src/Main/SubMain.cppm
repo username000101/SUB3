@@ -27,8 +27,8 @@ export namespace sub::main {
 
 		server::rpc::start_rpc_server(5000); // Start RPC server
 
-		td::TdWrapper::CreateInstance();				// Create td json client
-		td::TdWrapper::StartRequestsSenderThread();		// Start requests sender thread
+		td::TdWrapper::CreateInstance();			// Create td json client
+		td::TdWrapper::StartRequestsSenderThread(); // Start requests sender thread
 		td::TdWrapper::ExecuteRequest(R"({ "@type": "setLogVerbosityLevel", "new_verbosity_level": 1 })");
 		td::TdWrapper::StartUpdatesBroadcasterThread(); // Start updates broadcaster thread
 
@@ -38,4 +38,4 @@ export namespace sub::main {
 			std::this_thread::sleep_for(std::chrono::milliseconds(100));
 		}
 	}
-}
+} // namespace sub::main

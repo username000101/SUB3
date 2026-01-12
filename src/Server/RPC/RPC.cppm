@@ -13,7 +13,7 @@ module;
 export module sub3_rpc;
 
 void rpc_server_loop(std::uint16_t port) {
-		LOGI << "Starting RPC server on port " << port << std::endl;
+	LOGI << "Starting RPC server on port " << port << std::endl;
 	try {
 		rpc::server server("127.0.0.1", port);
 		server.bind("sub.ping", [] { return "PONG"; });
@@ -82,4 +82,4 @@ export namespace sub::server::rpc {
 		std::thread server_thread([port] { rpc_server_loop(port); });
 		server_thread.detach();
 	}
-}
+} // namespace sub::server::rpc

@@ -1,6 +1,6 @@
-﻿#include "Config.h"
+﻿#include <plog/Log.h>
 
-#include <plog/Log.h>
+#include "Config.h"
 
 void sub::config::Configuration::AddVariable(const std::string& name, const std::string& value, const WriteOptions& wropts) {
 	if (!config.loadable_config.has_value()) {
