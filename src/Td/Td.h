@@ -11,7 +11,7 @@
 #include <plog/Log.h>
 #include <td/telegram/td_json_client.h>
 
-#include "Error/Error.h"
+import sub3_error;
 
 namespace sub::td {
 	class TdWrapper {
