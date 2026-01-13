@@ -11,11 +11,11 @@ module;
 import sub3_main;
 import sub3_logging;
 
-export module sub3_cli;
+export module sub3_cli:parse_cli_args.impl;
 
 export namespace sub::cli {
 	void parse_cli_args(int argc, char** argv) {
-			CLI::App app{"Telegram userbot"};
+		CLI::App app{"Telegram userbot"};
 		argv = app.ensure_utf8(argv);
 
 		std::filesystem::path config;
@@ -61,7 +61,7 @@ export namespace sub::cli {
 				if (cfg.loadable_config->blocked_requests.empty()) std::print(std::cout, "cfg::loadable_config::blocked_requests: empty\n");
 				else {
 					std::print(std::cout, "cfg::loadable_config::blocked_requests: {{\n");
-					for (auto& brequest : cfg.loadable_config->blocked_requests) {
+					for (auto& brequest: cfg.loadable_config->blocked_requests) {
 						std::print(std::cout, "\t'{}'\n", brequest);
 					}
 					std::print(std::cout, "}}\n");
@@ -70,7 +70,7 @@ export namespace sub::cli {
 				if (cfg.loadable_config->modules.empty()) std::print(std::cout, "cfg::loadable_config::modules: empty\n");
 				else {
 					std::print(std::cout, "cfg::loadable_config::modules: {{\n");
-					for (auto& mlinfo : cfg.loadable_config->modules) {
+					for (auto& mlinfo: cfg.loadable_config->modules) {
 						std::print(std::cout, "\t{{'{}', '{}'}}\n", mlinfo.prefix ? mlinfo.prefix.value() : "", mlinfo.file.string());
 					}
 					std::print(std::cout, "}}\n");
@@ -79,7 +79,7 @@ export namespace sub::cli {
 				if (cfg.loadable_config->variables.empty()) std::print(std::cout, "cfg::loadable_config::variables: empty\n");
 				else {
 					std::print(std::cout, "cfg::loadable_config::variables: {{\n");
-					for (auto& var : cfg.loadable_config->variables) {
+					for (auto& var: cfg.loadable_config->variables) {
 						std::print(std::cout, "\t{{'{}', '{}'}}\n", var.first, var.second);
 					}
 					std::print(std::cout, "}}\n");
@@ -90,4 +90,4 @@ export namespace sub::cli {
 
 		main::sub_main(config, spoofed_version);
 	}
-} // namespace sub::cli
+}

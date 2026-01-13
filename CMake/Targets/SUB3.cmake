@@ -41,7 +41,8 @@ target_sources(SUB3
         PRIVATE
         FILE_SET CXX_MODULES
         FILES
-            "${PREFIX}/src/CLI/Cli.cppm"
+            "${PREFIX}/src/CLI/CLI.cppm"
+            "${PREFIX}/src/CLI/CLI.parse_cli_args.impl.cppm"
             "${PREFIX}/src/Error/Error.cppm"
             "${PREFIX}/src/Server/RPC/RPC.cppm"
             "${PREFIX}/src/Logger/Logger.cppm"
