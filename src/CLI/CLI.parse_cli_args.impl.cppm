@@ -90,4 +90,4 @@ export namespace sub::cli {
 
 		main::sub_main(config, spoofed_version);
 	}
-}
+} // namespace sub::cli
