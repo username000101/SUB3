@@ -45,6 +45,7 @@ target_sources(SUB3
             "${PREFIX}/src/CLI/CLI.parse_cli_args.impl.cppm"
             "${PREFIX}/src/Error/Error.cppm"
             "${PREFIX}/src/Server/RPC/RPC.cppm"
+            "${PREFIX}/src/Server/RPC/RPC.start_rpc_server.impl.cppm"
             "${PREFIX}/src/Logger/Logger.cppm"
             "${PREFIX}/src/Main/SubMain.cppm"
 )
